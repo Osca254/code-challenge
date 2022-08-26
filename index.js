@@ -185,4 +185,10 @@
 //  updateDays("Monday")
 //  let p = document.body.innerHTML 
 // console.log (document.body)
-function clickMe()
+fetch('http://api.open-notify.org/astros.json')
+.then((res) =>{
+    return res.json();
+})
+.then((data)=> {
+    console.log(data);
+})
