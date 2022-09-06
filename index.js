@@ -1,6 +1,6 @@
-// // const age = 6;
-// // const isAdult = age >= 18;
-// // isAdult;
+// const age = 6;
+// const isAdult = age >= 18;
+// isAdult;
 
 // function say(greeting, firstName) {
 //   return `${greeting} my name is ${firstName}`;
@@ -185,10 +185,111 @@
 //  updateDays("Monday")
 //  let p = document.body.innerHTML 
 // console.log (document.body)
-fetch('http://api.open-notify.org/astros.json')
-.then((res) =>{
-    return res.json();
-})
-.then((data)=> {
-    console.log(data);
-})
+// fetch('http://api.open-notify.org/astros.json')
+// .then((res) =>{
+//     return res.json();
+// })
+// .then((data)=> {
+//     console.log(data);
+// })
+// const itemCtrl = (function(){
+//     let data = [];
+//     function add(item){
+//         console.log('Item Added...');
+
+//     }
+//     function get(id){
+//         return data.find(item => {
+//             returnitem.id === id;
+//         })
+//     }
+//     return {
+//         add : add,
+//         get : get
+//     }
+// })();
+// itemCtrl.add({id:1,name: 'John'})
+// itemCtrl.add({id:2,name:'Smith'})
+// function greeting(name){
+//     alert(`Hello,${name}`)
+// }
+// function processUserInput(callback){
+//     const name = prompt('Please enter your name.');
+//     callback(name)
+// }
+// processUserInput(greeting);
+
+// let num = [1,2,3,4,5,6,7,9]
+// const loopThroughArray = function(array){
+//     for(let item of array){
+//         console.log(item)
+//     }
+// }
+// const capitaliseArray = function(array){
+//     let newArray =[]
+//     for(let item of array){
+//       newArray.push(item.toUpperCase())
+//     }
+// console.log(newArray)
+// }
+// const loweringCase = function(array){
+//     let newerArray =[]
+//     for(let item of array){
+// newerArray.push(item.toLowerCase())
+//     }
+//     console.log(newerArray)
+// }
+
+
+// function handleBooks(fun) {
+//     let books = ['Advanced js','Javascript : The good port','Learn Javascricpt VISUALLY','You don\'t know js','Javascript :The quick reminder']
+    
+//     fun(books)
+// }
+// handleBooks(capitaliseArray)
+// handleBooks(loweringCase)
+let books = [
+    {
+        tittle : 'Eloquent Javascript',
+        price : 457.00,
+        inventory :5
+    },
+    {
+        tittle: 'Javascript : The Good Parts',
+        price :234,
+        inventory :4
+    },
+    {
+        tittle: 'You don\'t know Javascript',
+        price: 23333,
+        inventory: 2
+    },
+    {
+        tittle: 'Javascript: Definative Guide',
+        price: 23.33,
+        inventory:0
+    }
+]
+function printReport(foo){
+    console.log(foo(books))
+} 
+function totalInventory(array){
+    let total = 0;
+for(let item of array){
+    total += item.inventory
+     
+}  
+return `Total Inventory:${total}`;
+}
+function replenish (array){
+   let replenishment = []
+   for(let item of array){
+    if(item.inventory< 3){
+        replenishment.push(item.tittle)  
+    }
+   }
+   console.log(replenishment )
+   return `Place Order for:${replenishment.join(', ')}`
+}
+printReport(totalInventory)
+printReport(replenish )
